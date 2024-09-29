@@ -1,0 +1,97 @@
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernardo</title>
+    <style>
+        #parte2, #parte3, #parte4, #parte5, #parte6, #imagemFinal, #parteFinal {
+            display: none;
+        }
+        p {
+            text-align: justify;
+        }
+        .centralizado {
+            text-align: center;
+            font-weight: bold;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Música de fundo com controles -->
+    <audio id="musicaFundo" autoplay loop controls>
+        <source src="Undertale OST_ 090 - His Theme.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1>Leia com o audio acima para melhor experiencia</h1>
+
+    <p>Era uma vez duas crianças gêmeas, porém, cada uma com suas características. Certo dia, seus pais se divorciaram. As crianças ficaram em guarda compartilhada, fins de semana com o pai, e de segunda a sexta com a mãe.</p>
+
+    <button id="btn1" onclick="mostrarParte('parte2', 'btn1')">Clique para prosseguir</button>
+
+    <p id="parte2">Mas, o pai das crianças começou a conhecer outra mulher, simpática, com carisma. Com o tempo, a mulher começou a mudar, manipulando-o para não dar atenção aos seus próprios filhos.</p>
+    
+    <button id="btn2" style="display:none;" onclick="mostrarParte('parte3', 'btn2')">Clique para prosseguir</button>
+
+    <p id="parte3">A mãe, já com muitos problemas de saúde, lutou para conseguir o direito de seus filhos, mas pouca coisa foi resolvida. O pai os enganava, voltava a cumprir a guarda no fim de semana, mas depois de algum tempo parava, afirmando: "eu dou mais de 800 reais de pensão, já faço mais que minha obrigação".</p>
+    
+    <button id="btn3" style="display:none;" onclick="mostrarParte('parte4', 'btn3')">Clique para prosseguir</button>
+
+    <p id="parte4">O tempo passou... As duas crianças já eram adolescentes, e a família continuava na mesma situação. Até que certo dia, a mãe conheceu um homem que iria ajudar muito essa família, não apenas financeiramente, mas principalmente dando amor, carinho e atenção, tanto à mãe quanto aos dois rapazes que nem eram do seu sangue.</p>
+    
+    <button id="btn4" style="display:none;" onclick="mostrarParte('parte5', 'btn4')">Clique para prosseguir</button>
+
+    <p id="parte5">O nome desse homem era Bernardo Jorge Coelho. Bernardo se casou com a mãe dos dois jovens. O pai terminou seu relacionamento com a mulher e começou a tentar mudar.</p>
+
+    <button id="btn5" style="display:none;" onclick="mostrarParte('parte6', 'btn5')">Clique para prosseguir</button>
+
+    <p id="parte6" class="centralizado">Atualmente, Bernardo tem uma família que o ama. Os jovens, mesmo sabendo que não têm parentesco algum com aquele homem, o consideram como um segundo pai.</p>
+
+    <p id="parteFinal" class="centralizado" style="display:none;">Um feliz aniversário atrasado à pessoa que me é uma segunda figura paterna: Bernardo</p>
+    
+    <button id="btnFinal" style="display:none;" onclick="mostrarImagem()">Clique para prosseguir</button>
+
+    <!-- Imagem oculta que será exibida ao final -->
+    <img id="imagemFinal" src="Screenshot_20240924-211357.jpg" alt="Imagem Final" style="display:none;">
+
+    <script>
+        function mostrarParte(parteId, btnId) {
+            // Mostra a parte atual do texto
+            document.getElementById(parteId).style.display = "block";
+            
+            // Esconde o botão clicado
+            document.getElementById(btnId).style.display = "none";
+            
+            // Mostra o próximo botão, se existir
+            if (btnId === 'btn1') {
+                document.getElementById('btn2').style.display = "inline";
+            } else if (btnId === 'btn2') {
+                document.getElementById('btn3').style.display = "inline";
+            } else if (btnId === 'btn3') {
+                document.getElementById('btn4').style.display = "inline";
+            } else if (btnId === 'btn4') {
+                document.getElementById('btn5').style.display = "inline";
+            } else if (btnId === 'btn5') {
+                document.getElementById('parteFinal').style.display = "block";
+                document.getElementById('btnFinal').style.display = "inline";
+            }
+        }
+
+        function mostrarImagem() {
+            // Exibe a imagem final
+            document.getElementById('imagemFinal').style.display = "block";
+            
+            // Esconde o último botão
+            document.getElementById('btnFinal').style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
